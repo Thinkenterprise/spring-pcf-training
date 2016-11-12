@@ -25,3 +25,6 @@ buildNumber.properties
 /.apt_generated/
 .idea/
 *.iml
+.gitignore
+spring-pcf- service/
+spring-pcf-application/src/test/

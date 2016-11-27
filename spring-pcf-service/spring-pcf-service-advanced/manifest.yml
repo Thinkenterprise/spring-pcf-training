@@ -1,0 +1,8 @@
+---
+applications:
+  - name: spring-pcf-service-advanced
+    buildpack: java_buildpack
+    instances: 1
+    memory: 1G
+    host: spring-pcf-service-advanced
+    path: target/spring-pcf-service-advanced-0.0.1-SNAPSHOT.jar

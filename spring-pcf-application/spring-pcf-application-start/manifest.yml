@@ -1,0 +1,8 @@
+---
+applications:
+  - name: spring-pcf-application-start
+    buildpack: java_buildpack
+    instances: 1
+    memory: 1G
+    host: spring-pcf-application-start
+    path: target/spring-pcf-application-start-0.0.1-SNAPSHOT.jar

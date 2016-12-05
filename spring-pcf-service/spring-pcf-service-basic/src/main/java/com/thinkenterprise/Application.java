@@ -21,16 +21,24 @@
 package com.thinkenterprise;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.thinkenterprise.domain.route.Route;
+import com.thinkenterprise.repository.RouteRepository;
+
 @RestController
 @SpringBootApplication
 public class Application {
 
+	@Autowired
+	private RouteRepository routeRepository;
+	
+	
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
@@ -39,4 +47,21 @@ public class Application {
     public ResponseEntity<String> index() {
         return ResponseEntity.ok("Hello World");
     }
+    
+    @RequestMapping("/createData")
+    public ResponseEntity<String> createData() {
+    	
+    	  Route route = new Route("LH7902", "MUC", "IAH");
+          routeRepository.save(route);
+          return ResponseEntity.ok("createData");
+    }
+    
+    
+    //@PostConstruct
+    private void initRoutes() {
+
+      
+    }
+    
+    
 }

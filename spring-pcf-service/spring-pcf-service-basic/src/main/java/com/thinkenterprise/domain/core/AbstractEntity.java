@@ -30,7 +30,7 @@ import javax.persistence.MappedSuperclass;
 public class AbstractEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue
     private Long id;
 
     public Long getId() {

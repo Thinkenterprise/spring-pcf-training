@@ -16,6 +16,7 @@
  *
  * @author Michael Schaefer
  */
+
 package com.thinkenterprise.service;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -23,10 +24,9 @@ import org.springframework.beans.factory.annotation.Value;
 
 public class CloudEnvironmentService implements EnvironmentService{
 
-	
 	private String environmentString = "Running in Cloud Environment";
 	
-	@Value("${vcap.application.name}")
+	@Value("")
 	private String applicationName;
 	
 	

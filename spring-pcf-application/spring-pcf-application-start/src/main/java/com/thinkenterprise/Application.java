@@ -21,25 +21,24 @@
 package com.thinkenterprise;
 
 
-/**
- * cf login 
- * cf push -p <target>
- * cf push 
- * 
- * 
- * 
- * */
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.thinkenterprise.service.EnvironmentService;
+
 @RestController
 @SpringBootApplication
 public class Application {
 
+	
+	@Autowired
+	private EnvironmentService environmentService;
+	
+	
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
@@ -47,5 +46,10 @@ public class Application {
     @RequestMapping("/helloWorld")
     public ResponseEntity<String> index() {
         return ResponseEntity.ok("Hello World");
+    }
+    
+    @RequestMapping("/getEnvironemtService")
+    public ResponseEntity<String>  getEnvironmentService() {
+       	return ResponseEntity.ok(environmentService.getEnvironment());
     }
 }

@@ -21,6 +21,7 @@
 package com.thinkenterprise;
 
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.http.ResponseEntity;
@@ -31,6 +32,16 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 public class Application {
 
+	
+	@Value("${vcap.services.user-provided.credentials.username}")
+	private String username;
+	
+	@Value("${vcap.services.user-provided.credentials.password}")
+	private String password;
+
+	@Value("${vcap.application.name}")
+	private String name;
+	
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
@@ -39,4 +50,23 @@ public class Application {
     public ResponseEntity<String> index() {
         return ResponseEntity.ok("Hello World");
     }
+    
+    @RequestMapping("/username")
+    public ResponseEntity<String> username() {
+        return ResponseEntity.ok(username);
+    }
+    
+    @RequestMapping("/password")
+    public ResponseEntity<String> password() {
+        return ResponseEntity.ok(password);
+    }
+    
+    @RequestMapping("/name")
+    public ResponseEntity<String> name() {
+        return ResponseEntity.ok(name);
+    }
+    
+    
+    
+    
 }

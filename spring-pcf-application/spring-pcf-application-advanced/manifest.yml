@@ -5,5 +5,5 @@ applications:
     buildpack: https://github.com/cloudfoundry/java-buildpack.git
     path: target/spring-pcf-application-advanced-0.0.1-SNAPSHOT.jar
     env:
-      MY_ENV: production
+      ROUTE_SERVICE_ENVIRONMENT: production
       SPRING_PROFILES_ACTIVE: cloudSpecial

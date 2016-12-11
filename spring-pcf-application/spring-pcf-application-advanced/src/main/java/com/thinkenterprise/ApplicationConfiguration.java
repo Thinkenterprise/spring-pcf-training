@@ -38,6 +38,7 @@ public class ApplicationConfiguration {
 		return new DevelopmentEnvironmentService();
 		
 	}
+	
 	@Bean
 	@Profile("cloud")
 	public EnvironmentService getCloudEnvironmentService() {

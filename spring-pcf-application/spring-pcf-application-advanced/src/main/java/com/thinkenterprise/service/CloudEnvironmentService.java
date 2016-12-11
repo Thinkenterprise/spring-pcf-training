@@ -29,11 +29,14 @@ public class CloudEnvironmentService implements EnvironmentService{
 	@Value("${vcap.application.name}")
 	private String applicationName;
 	
+	@Value("${route.service.environment}")
+	private String applicationEnvironment;
+	
 	
 	@Override
 	public String getEnvironment() {
 		
-		return applicationName + " "+ environmentString;
+		return applicationName + " "+ environmentString + applicationEnvironment;
 		
 	}
 	

@@ -54,14 +54,6 @@ public class Application {
     	  Route route = new Route("LH7902", "MUC", "IAH");
           routeRepository.save(route);
           return ResponseEntity.ok("createData");
-    }
-    
-    
-    //@PostConstruct
-    private void initRoutes() {
-
-      
-    }
-    
+    }    
     
 }

@@ -33,10 +33,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class Application {
 
 	
-	@Value("${vcap.services.user-provided.credentials.username}")
+	@Value("${vcap.services.myUserProvidedService.credentials.username}")
 	private String username;
 	
-	@Value("${vcap.services.user-provided.credentials.password}")
+	@Value("${vcap.services.myUserProvidedService.credentials.password}")
 	private String password;
 
 	@Value("${vcap.application.name}")

@@ -1,8 +1,5 @@
 ---
 applications:
   - name: spring-pcf-api-start
-    buildpack: java_buildpack
     instances: 1
-    memory: 1G
-    host: spring-pcf-api-start
     path: target/spring-pcf-api-start-0.0.1-SNAPSHOT.jar

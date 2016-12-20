@@ -32,7 +32,4 @@ import java.time.LocalDate;
 
 public interface FlightRepository extends CrudRepository<Flight, Long> {
 
-    @Query("select f from Flight f where f.date = :date")
-    Iterable<Flight> findByDate(@DateTimeFormat(iso = ISO.DATE) @Param("date") LocalDate date);
-
 }

@@ -33,9 +33,6 @@ import java.util.Set;
 
 
 @Entity
-@NamedEntityGraphs({
-        @NamedEntityGraph(name = "routeFlight", attributeNodes = {@NamedAttributeNode("flights")}),
-})
 public class Route extends AbstractEntity {
 
     private String flightNumber;

@@ -34,16 +34,12 @@ import java.util.Set;
 
 
 @Entity
-@NamedEntityGraphs({
-        @NamedEntityGraph(name = "routeFlight", attributeNodes = {@NamedAttributeNode("flights")}),
-        @NamedEntityGraph(name = "routeFlightAircraft", attributeNodes = {@NamedAttributeNode(value = "flights")})
-})
 public class Route extends AbstractEntity {
-    @NotEmpty
+  
     private String flightNumber;
-    @NotEmpty
+   
     private String departure;
-    @NotEmpty
+    
     private String destination;
 
     private LocalTime departureTime;

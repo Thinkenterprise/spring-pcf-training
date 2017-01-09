@@ -22,7 +22,6 @@ import org.springframework.beans.factory.annotation.Value;
 
 
 public class CloudEnvironmentService implements EnvironmentService{
-
 	
 	private String environmentString = "Running in Cloud Environment";
 	

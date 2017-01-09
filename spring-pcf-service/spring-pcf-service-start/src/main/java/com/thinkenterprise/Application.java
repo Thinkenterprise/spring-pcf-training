@@ -52,15 +52,7 @@ public class Application {
         return ResponseEntity.ok("Hello World");
     }
     
-    @RequestMapping(method=RequestMethod.POST)
-    public ResponseEntity<String> post() {
-    	
-    	  Route route = new Route("LH7902" + new Random().nextInt(), "MUC", "IAH");
-          routeRepository.save(route);
-          return ResponseEntity.ok("createData");
-    } 
-    
-    
+        
     @RequestMapping("/routes")
     public ResponseEntity<Iterable<Route>> get() {
     	

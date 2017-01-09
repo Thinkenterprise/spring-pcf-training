@@ -45,8 +45,18 @@ public class Route extends AbstractEntity {
     @Enumerated(EnumType.ORDINAL)
     @ElementCollection(targetClass = DayOfWeek.class)
     private Set<DayOfWeek> scheduledWeekdays = new HashSet<>();
+  
+    private String aircraft;
+    
+    public String getAircraft() {
+		return aircraft;
+	}
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	public void setAircraft(String aircraft) {
+		this.aircraft = aircraft;
+	}
+
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @OrderColumn(name = "date")
     private List<Flight> flights = new ArrayList<>();
 

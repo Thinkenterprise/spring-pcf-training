@@ -1,8 +1,0 @@
----
-applications:
-  - name: spring-pcf-microservice-advanced
-    buildpack: java_buildpack
-    instances: 1
-    memory: 1G
-    host: spring-pcf-microservice-advanced
-    path: target/spring-pcf-microservice-advanced-0.0.1-SNAPSHOT.jar

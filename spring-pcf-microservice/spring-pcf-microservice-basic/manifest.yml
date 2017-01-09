@@ -1,8 +1,0 @@
----
-applications:
-  - name: spring-pcf-microservice-basic
-    buildpack: java_buildpack
-    instances: 1
-    memory: 1G
-    host: spring-pcf-microservice-basic
-    path: target/spring-pcf-microservice-basic-0.0.1-SNAPSHOT.jar

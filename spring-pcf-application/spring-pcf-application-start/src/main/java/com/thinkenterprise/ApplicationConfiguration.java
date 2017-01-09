@@ -33,16 +33,12 @@ public class ApplicationConfiguration {
 
 	@Bean
 	@Profile("development")
-	public EnvironmentService getDefaultEnvironmentService() {
-		
-		return new DevelopmentEnvironmentService();
-		
+	public EnvironmentService getDefaultEnvironmentService() {		
+		return new DevelopmentEnvironmentService();		
 	}
 	
-	public EnvironmentService getCloudEnvironmentService() {
-		
-		return new CloudEnvironmentService();
-		
+	public EnvironmentService getCloudEnvironmentService() {	
+		return new CloudEnvironmentService();	
 	}
 
 }

@@ -20,7 +20,6 @@
 package com.thinkenterprise.service;
 
 
-
 public class CloudEnvironmentService implements EnvironmentService{
 
 	private String environmentString = "Running in Cloud Environment";

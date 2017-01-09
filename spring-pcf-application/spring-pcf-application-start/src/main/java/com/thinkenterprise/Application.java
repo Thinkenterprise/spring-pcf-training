@@ -52,6 +52,7 @@ public class Application {
         return ResponseEntity.ok("Hello World");
     }
     
+    
     @RequestMapping("/getEnvironemtService")
     public ResponseEntity<String>  getEnvironmentService() {
        	return ResponseEntity.ok(environmentService.getEnvironment());

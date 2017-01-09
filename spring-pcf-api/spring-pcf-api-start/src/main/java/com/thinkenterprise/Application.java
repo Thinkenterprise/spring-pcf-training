@@ -64,7 +64,7 @@ public class Application {
         return ResponseEntity.ok(repository.findAll());
     }
     
-    
+     
     @Bean
     public Docket newsApi() {
         return new Docket(DocumentationType.SWAGGER_2)

@@ -56,7 +56,7 @@ public class Application {
     @RequestMapping(value="helloWorld", method=RequestMethod.GET)
     public ResponseEntity<String> index() {
         return ResponseEntity.ok("Hello World");
-    }
+    } 
     
        
     @RequestMapping(value = "routes", method = RequestMethod.GET)

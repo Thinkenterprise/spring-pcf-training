@@ -58,7 +58,7 @@ public class Application {
         return ResponseEntity.ok("Hello World");
     }
     
-     
+      
     @RequestMapping(value = "routes", method = RequestMethod.GET)
     public ResponseEntity<Iterable<Route>> findAll() {
         return ResponseEntity.ok(repository.findAll());

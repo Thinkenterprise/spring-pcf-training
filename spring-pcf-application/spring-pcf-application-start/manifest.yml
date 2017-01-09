@@ -1,0 +1,5 @@
+---
+applications:
+  - name: routeService
+    instance: 1
+    path: spring-pcf-application-start-0.0.1-SNAPSHOT.jar

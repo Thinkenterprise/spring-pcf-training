@@ -21,6 +21,8 @@
 package com.thinkenterprise;
 
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -34,6 +36,7 @@ import com.thinkenterprise.service.EnvironmentService;
 @SpringBootApplication
 public class Application {
 
+	private Log logger = LogFactory.getLog(Application.class); 
 	
 	@Autowired
 	private EnvironmentService environmentService;
@@ -45,6 +48,7 @@ public class Application {
 
     @RequestMapping("/helloWorld")
     public ResponseEntity<String> index() {
+    	logger.info("Das ist meine Logausgabe");
         return ResponseEntity.ok("Hello World");
     }
     

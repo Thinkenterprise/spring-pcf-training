@@ -14,7 +14,7 @@
                 <metaDataModelPropertiesManager>
                   <properties/>
                 </metaDataModelPropertiesManager>
-                <fields>
+                <fields> 
                   <org.mule.common.metadata.DefaultMetaDataField>
                     <name>flight_number</name>
                     <model class="org.mule.common.metadata.DefaultSimpleMetaDataModel">

@@ -13,19 +13,7 @@
   <metadataModel class="org.mule.common.metadata.DefaultListMetaDataModel">
     <dataType>LIST</dataType>
     <metaDataModelPropertiesManager>
-      <properties>
-        <org.mule.tooling.ui.modules.core.metadata.definition.custom.types.CSVSampleSettingsMetadataProperties>
-          <sampleFilePath>src\main\resources\input.csv</sampleFilePath>
-          <delimiter>,</delimiter>
-          <rowsToIgnore>0</rowsToIgnore>
-          <quotedString>false</quotedString>
-          <relativePath>true</relativePath>
-          <quoteChar>&quot;</quoteChar>
-        </org.mule.tooling.ui.modules.core.metadata.definition.custom.types.CSVSampleSettingsMetadataProperties>
-        <org.mule.common.metadata.property.TextBasedExampleMetaDataModelProperty>
-          <exampleContent>src\main\resources\input.csv</exampleContent>
-        </org.mule.common.metadata.property.TextBasedExampleMetaDataModelProperty>
-      </properties>
+      <properties/>
     </metaDataModelPropertiesManager>
     <model class="org.mule.common.metadata.DefaultStructuredMetadataModel">
       <dataType>CSV</dataType>

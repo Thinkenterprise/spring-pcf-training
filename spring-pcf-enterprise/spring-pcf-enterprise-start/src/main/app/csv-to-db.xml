@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:metadata="http://www.mulesoft.org/schema/mule/metadata" xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:spring="http://www.springframework.org/schema/beans" xmlns:db="http://www.mulesoft.org/schema/mule/db" xmlns:file="http://www.mulesoft.org/schema/mule/file" xmlns:dw="http://www.mulesoft.org/schema/mule/ee/dw" xmlns:core="http://www.mulesoft.org/schema/mule/core" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-current.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/file http://www.mulesoft.org/schema/mule/file/current/mule-file.xsd
+http://www.mulesoft.org/schema/mule/ee/dw http://www.mulesoft.org/schema/mule/ee/dw/current/dw.xsd
+http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+    <db:mysql-config name="MySQL_RouteDB" url="jdbc:mysql://us-cdbr-iron-east-04.cleardb.net/ad_331735929a1e935?user=b21e8730fef54d&amp;password=e028e46f" doc:name="MySQL Configuration"/>
+    <flow name="csv-to-db">
+        <file:inbound-endpoint path="src/main/resources/input" responseTimeout="10000" metadata:id="25209b92-6497-47da-87d4-2a273c69b523" doc:name="Poll files"/>
+        <dw:transform-message doc:name="CSV to Map">
+            <dw:set-payload><![CDATA[%dw 1.0
+%output application/java
+---
+payload map
+{
+	departure: $.departure,
+	destination: $.destination,
+	flight_number: $.flight_number
+}]]></dw:set-payload>
+        </dw:transform-message>
+        <logger message="saving objects: #[payload]" level="INFO" metadata:id="8bade69a-f3de-4b74-b25e-d5468074bc1f" doc:name="Log objects to save"/>
+        <collection-splitter doc:name="Collection Splitter"/>
+        <db:insert config-ref="MySQL_RouteDB" doc:name="Database">
+            <db:parameterized-query><![CDATA[INSERT INTO route (departure, destination, flight_number) VALUES (#[payload.departure],#[payload.destination],#[payload.flight_number]);]]></db:parameterized-query>
+        </db:insert>
+    </flow>
+</mule>

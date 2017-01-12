@@ -1,12 +1,12 @@
 # Importing a CSV file into mongoDB
 
-This example illustrates how to use the mongoDB connector to import data in a CSV format from a local directory into mongoDB. This examples also covers other important components in the studio including DataWeave and Scopes such as the Message Enricher and Foreach.
+This example illustrates how to use the database connector to import data in a CSV format from a local directory into mysql DB.
 
 ###Assumption
 This document describes the details of the example within the context of Anypoint™ Studio, Mule ESB’s graphical user interface (GUI). This document assumes that you are familiar with Mule ESB and the [Anypoint Studio interface](http://www.mulesoft.org/documentation/display/current/Anypoint+Studio+Essentials).
 
 ###Example Use Case
-In this example we transform a sample CSV file containing sales data into a Map with a key value pair. We use the DataWeave transformer to do so. This Map is basically a collection called customers. We now use the mongoDB connector embedded in a Message Enricher scope to check if such a collection exists in the database. The message enricher basically enriches the message from #[payload] to #[flowVars['existsCollection']]. This is then used by the choice router to decide whether to route to a mongoDB connector that creates a collection or just use the default option. The last mongoDB connector embedded in the For Each scope, saves the object from the map, iteratively for each of the elements in the collection.
+In this example we transform a sample CSV file containing flight route data into a Map with a key value pair. We use the DataWeave transformer to do so. This Map is basically a collection called route. With the collectiopn splitter with seperate the data stream in single records, which are written to the database with the database connector record by record.
 
 ###Set Up and Run the Example
 
@@ -68,7 +68,6 @@ The output then shows the inserted objects similar to  what is below.
     { "_id" : ObjectId("53b2518b03643b83cf1cecde"), "firstname" : "aaa", "surname" :      "vbbb", "phone" : "ccc", "state" : "sss" }
 
 ### Go Further
-* Read more about the mongoDB connector [here](http://www.mulesoft.org/documentation/display/current/Message+Enricher)
-* Read more about the message enricher scope [here](http://www.mulesoft.org/documentation/display/current/Message+Enricher)
-* Read more about the For Each connector [here](http://www.mulesoft.org/documentation/display/current/Foreach)
+* Read more about the database connector [here](https://docs.mulesoft.com/mule-user-guide/v/3.7/database-connector)
+* Read more about the collection splitter [here](https://docs.mulesoft.com/mule-user-guide/v/3.7/splitter-flow-control-reference)
 * Learn more about Anypoint DataWeave [here](https://developer.mulesoft.com/docs/display/current/DataWeave+Reference+Documentation)

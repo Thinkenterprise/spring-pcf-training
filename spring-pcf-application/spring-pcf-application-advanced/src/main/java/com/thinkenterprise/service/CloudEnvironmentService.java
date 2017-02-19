@@ -34,9 +34,7 @@ public class CloudEnvironmentService implements EnvironmentService{
 	
 	@Override
 	public String getEnvironment() {
-		
 		return applicationName + " "+ environmentString + " "+ applicationEnvironment;
-		
 	}
 	
 }

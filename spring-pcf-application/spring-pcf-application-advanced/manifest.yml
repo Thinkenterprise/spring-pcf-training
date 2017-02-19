@@ -1,6 +1,6 @@
 ---
 applications:
-  - name: spring-pcf-application-advanced
+  - name: routeService
     instances: 1
     buildpack: https://github.com/cloudfoundry/java-buildpack.git
     path: target/spring-pcf-application-advanced-0.0.1-SNAPSHOT.jar

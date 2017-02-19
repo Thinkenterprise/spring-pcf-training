@@ -1,6 +1,6 @@
 ---
 applications:
-  - name: spring-pcf-service-advanced
+  - name: routeService
     instances: 1
     path: target/spring-pcf-service-advanced-0.0.1-SNAPSHOT.jar
     services:

@@ -1,6 +1,6 @@
 ---
 applications:
-  - name: routeDataService
+  - name: routeService
     instances: 1
     path: target/spring-pcf-service-start-0.0.1-SNAPSHOT.jar
       

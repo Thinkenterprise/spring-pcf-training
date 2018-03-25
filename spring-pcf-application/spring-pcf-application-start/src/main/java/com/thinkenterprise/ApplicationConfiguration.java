@@ -33,11 +33,13 @@ import com.thinkenterprise.service.EnvironmentService;
 public class ApplicationConfiguration {
 
 	@Bean
-	@Profile("default")
+	@Profile("development")
 	public EnvironmentService getDefaultEnvironmentService() {		
 		return new DevelopmentEnvironmentService();		
 	}
 	
+	@Bean
+	@Profile("production")
 	public EnvironmentService getCloudEnvironmentService() {	
 		return new CloudEnvironmentService();	
 	}

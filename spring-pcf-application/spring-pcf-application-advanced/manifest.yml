@@ -2,7 +2,7 @@
 applications:
   - name: routeService
     instances: 1
-    buildpack: https://github.com/cloudfoundry/java-buildpack.git
+    buildpack: https://github.com/Thinkenterprise/java-buildpack.git
     path: target/spring-pcf-application-advanced-0.0.1-SNAPSHOT.jar
     env:
       ROUTE_SERVICE_ENVIRONMENT: production
